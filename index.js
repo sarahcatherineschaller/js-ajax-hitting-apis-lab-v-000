@@ -66,6 +66,12 @@ function getBranches(el) {
 
 function displayBranches() {
   const branches = JSON.parse(this.responseText)
-  const branchesList =
-
-}
+  const branchesList = branches.map(function(branch) {
+    return (`
+      <ul>
+        <li>${branch.name}</li> 
+      </ul>`
+    );
+  });
+  document.getElementById("details").innerHTML = branchesList
+};
