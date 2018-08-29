@@ -12,7 +12,7 @@ function getRepositories() {
 
 function displayRepositories() {
   const repos = JSON.parse(this.responseText);
-  const repoList = repos.map(function(repo) {
+  const repoList = repos.map(repo => {
     const listUsername = repo.owner.login
     const listRepoName = repo.name
     return (`
@@ -65,5 +65,7 @@ function getBranches(el) {
 };
 
 function displayBranches() {
+  const branches = JSON.parse(this.responseText)
+  const branchesList =
 
 }
