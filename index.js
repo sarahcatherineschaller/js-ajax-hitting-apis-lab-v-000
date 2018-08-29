@@ -41,7 +41,18 @@ function getCommits(el) {
 };
 
 function displayCommits() {
-}
+  const commits = JSON.parse(this.responseText)
+  const commitsList = commits.map(function(commit) {
+    return (`
+      <ul>
+        <li>${commit.commit.author.name}</li>
+        <li>${commit.author.login}</li>
+        <li>${commit.commit.message}</li>
+      </ul>`
+    );
+  });
+  document.getElementById("details").innerHTML = commitsList
+};
 
 function getBranches() {
 }
