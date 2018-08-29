@@ -1,3 +1,5 @@
+const rootURL = "https://api.github.com"
+
 function getRepositories() {
   const name = document.getElementById("username").value;
   const address = rootURL + "/users/" + name + "/repos";
