@@ -29,8 +29,16 @@ function displayRepositories() {
   document.getElementById("repositories").innerHTML = repoList
 };
 
-function getCommits() {
-}
+function getCommits(el) {
+  const repoName = el.dataset.repository
+  const address = rootURL + el.dataset.username + "/" + repoName + "/commits"
+  const req = new XMLHttpRequest()
+
+  req.addEventListener("load, displayCommits")
+  req.open("GET", address)
+  req.send()
+  return false;
+};
 
 function displayCommits() {
 }
