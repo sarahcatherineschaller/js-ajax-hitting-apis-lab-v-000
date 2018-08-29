@@ -54,8 +54,15 @@ function displayCommits() {
   document.getElementById("details").innerHTML = commitsList
 };
 
-function getBranches() {
-}
+function getBranches(el) {
+  const repoName = el.dataset.repository
+  const address = rootURL + "/repos/" + el.dataset.username + "/" + repoName + "/branches"
+  const req = new XMLHttpRequest()
+
+  req.addEventListener("load", displayBranches)
+  req.open("GET", address)
+  req.send()
+};
 
 function displayBranches() {
 
